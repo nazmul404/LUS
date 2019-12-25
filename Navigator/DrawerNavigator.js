@@ -2,18 +2,19 @@ import React from 'react'
 import { createDrawerNavigator, } from 'react-navigation-drawer';
 import { createAppContainer} from 'react-navigation';
 import HomeScreen from '../Screen/HomeScreen';
-import Profile from '../Screen/Profile'
+import Profile from '../Screen/ProfileScreen'
 import NoticeScreen from '../Screen/NoticeScreen';
-import Event from '../Screen/Event';
-import Group from '../Screen/Group';
-import Alumni from '../Screen/Alumni';
-import Departments from '../Screen/Departments';
-import Club from '../Screen/Club';
-import Contact from '../Screen/Contact';
-import About from '../Screen/About';
-import Result from '../Screen/Result'
+import Event from '../Screen/EventScreen';
+import Group from '../Screen/GroupScreen';
+import Alumni from '../Screen/AlumniScreen';
+import FacultyMembers from '../Screen/FacultyMembers';
+import Club from '../Screen/ClubScreen';
+import Contact from '../Screen/ContactScreen';
+import About from '../Screen/AboutScreen';
+import Result from '../Screen/ResultScreen'
 import NavDrawer from '../Component/NavDrawer'
 import {AntDesign,Feather,MaterialCommunityIcons,Foundation,MaterialIcons,FontAwesome} from '@expo/vector-icons'
+import TabNavigatior from './TabNavigatior';
 
 const DrawerNavigator = createDrawerNavigator({
     Home: {
@@ -27,7 +28,6 @@ const DrawerNavigator = createDrawerNavigator({
     Profile: {
         screen: Profile,
         navigationOptions: {
-            title:"Profile",
             drawerIcon: ({tintColor}) => <Feather name="user" size={16} color={tintColor}/>
         }
     },
@@ -73,10 +73,10 @@ const DrawerNavigator = createDrawerNavigator({
             drawerIcon: ({tintColor}) => <FontAwesome name="graduation-cap" size={16} color={tintColor}/>
         }
     },
-    Departments: {
-        screen: Departments,
+    Faculty: {
+        screen: TabNavigatior,
         navigationOptions: {
-            title:"Departments",
+            title:"Faculty Members",
             drawerIcon: ({tintColor}) => <FontAwesome name="university" size={16} color={tintColor}/>
         }
     },

@@ -1,7 +1,7 @@
 import React, { Component, Children } from 'react';
 import { Text, View, StyleSheet,Dimensions } from 'react-native';
+
 export default class Box extends Component {
-    
     render() {
         const {style}=this.props;
         const {children}=this.props;

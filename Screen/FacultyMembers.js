@@ -4,7 +4,7 @@ import {DrawerActions} from 'react-navigation-drawer';
 import {Header,Icon} from 'react-native-elements';
 
 
-export default class Departments extends Component {
+export default class Faculty extends Component {
     render() {
         return (
             <View>
@@ -16,7 +16,7 @@ export default class Departments extends Component {
                             onPress={()=> this.props.navigation.dispatch(DrawerActions.toggleDrawer())}
                         />
                     }
-                    centerComponent={{ text: 'Department', style: { color: '#fff' } }}
+                    centerComponent={{ text: 'Faculty Members', style: { color: '#fff' } }}
                     rightComponent={
                         <Icon iconStyle={{marginRight:5}}
                             name='notifications-active'
@@ -25,7 +25,7 @@ export default class Departments extends Component {
                         />
                     }
                 />
-                <Text> Department </Text>
+                <Text> Faculty Members </Text>
             </View>
         )
     }

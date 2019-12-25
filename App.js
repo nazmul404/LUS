@@ -15,7 +15,9 @@ export default class App extends Component {
       measurementId: "G-Y71NBEY11R"
     };
     // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
+      if (!firebase.apps.length) {
+        firebase.initializeApp(firebaseConfig);
+      }
     // firebase.analytics();
   }
 

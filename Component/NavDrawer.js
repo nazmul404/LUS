@@ -21,7 +21,8 @@ export default NavDrawer = props =>  (
 
 const styles=StyleSheet.create({
     container: {
-        flex:1
+        flex:1,
+        paddingRight:0
     },
     profile: {
         height:80,

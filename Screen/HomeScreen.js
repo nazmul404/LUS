@@ -51,8 +51,8 @@ const NEWS = [
         "Md Abdul Hamid, President, People’s Republic of Bangladesh and Chancellor of Leading University. After conferring degrees of 4734 graduating candidates he congratulated "+
         "them on this memorable event of their life. In a very inspirational speech he ignited patriotic zeal among graduates referring to the spirit of the month of March and our "+
         "great liberation War. He focuses on meaninglessness of life without freedom and emphasized on the connection among education, ethnic existence as Bangali and our liberation "+
-        "as the roadway to the development of our country. \ Former Vice Chancellor of Jahangirnagar University and former member of Bangladesh Public Service Commission Professor \
-        Shariff Enamul Kabir presented the conference speech in this graduation ceremony. Professor Kabir highlights the 18 years journey of Leading University and said that "+
+        "as the roadway to the development of our country. Former Vice Chancellor of Jahangirnagar University and former member of Bangladesh Public Service Commission Professor "+ 
+        " Shariff Enamul Kabir presented the conference speech in this graduation ceremony. Professor Kabir highlights the 18 years journey of Leading University and said that "+
         "niversity is the center of research and invention as it is a place of where knowledge is nourished. It opens the minds of the students to the light of learning and paves "+
         "the way to explore the world.Founder Chairman of Board of Trustees of Leading University Danobir Dr. Syed Ragib Ali, other members of BOT, Mr. Banamali Bhowmick, Treasurer "+
         "of the University, members of Academic Council and Syndicate members were present at the 3rd Convocation ceremony. The convocation brought faculty members of all departments,"+

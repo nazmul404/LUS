@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View,StyleSheet,ImageBackground,Image,Dimensions,ActivityIndicator,Alert,Linking} from 'react-native'
+import { Text, View,StyleSheet,ImageBackground,Image,Dimensions,ActivityIndicator,Alert,Linking,KeyboardAvoidingView} from 'react-native'
 import BoxLogin from '../Component/BoxLogin'
 import Button from '../Component/common/Button'
 import { Input,Icon} from 'react-native-elements';
@@ -13,15 +13,26 @@ export default class LoginScreen extends Component {
         this.state={
             email:'',
             password:'',
-            loading: false
+            loading: false,
+            seePassword:true
         };
     }
     static navigationOptions = {
         header:null
     }
 
-    sg=()=> {
-        
+    seePassword=()=> {
+        const {seePassword} = this.state;
+        if (seePassword==false) {
+            this.setState({
+                seePassword:true
+            })
+        }
+        else {
+            this.setState({
+                seePassword:false
+            })
+        }
     }
     signIn=()=> {
 
@@ -48,37 +59,40 @@ export default class LoginScreen extends Component {
     
 
     render() {
-        const {loading} = this.state;
-        // console.log(loading);
+        const {loading,seePassword} = this.state;
+        // console.log(height,width);
         return (
             <ImageBackground source={require('../assets/loginBackground.png')} style={styles.background}>
-                <BoxLogin style={{marginTop:370}}>
-                    <Input containerStyle={{marginBottom:20}} labelStyle={{color:'#0073D8',fontWeight:'normal'}}
-                            label="Student ID"
-                            placeholder="Enter Your Student ID"
-                            rightIcon= {
-                                <Icon iconStyle={{}}
-                                    name='perm-identity'
-                                    color='#0073D8'
-                                    size={22} />
-                                    }
-                            onChangeText={(email)=>this.setState({email:email})}
-                            autoCompleteType='email'
-                    />
-                    <Input labelStyle={{color:'#0073D8',fontWeight:'normal'}}
-                            label="Password"
-                            placeholder="Enter Password"
-                            rightIcon= {
-                                <Icon iconStyle={{}}
-                                    name='lock-outline'
-                                    color='#0073D8'
-                                    size={22} />
-                                    }
-                            onChangeText={(password)=>this.setState({password:password})}
-                            secureTextEntry={true}
-                            // errorMessage="Invalid Email or Password"
-                    />
-                </BoxLogin>
+                <KeyboardAvoidingView behavior="position">               
+                    <BoxLogin style={{marginTop:height/2.7,width:width-50}}>
+                        <Input containerStyle={{marginBottom:20}} labelStyle={{color:'#0073D8',fontWeight:'normal'}}
+                                label="Email"
+                                placeholder="Enter Your Email Address"
+                                rightIcon= {
+                                    <Icon iconStyle={{}}
+                                        name='perm-identity'
+                                        color='#0073D8'
+                                        size={22} />
+                                        }
+                                onChangeText={(email)=>this.setState({email:email})}
+                                autoCompleteType='email'
+                        />
+                        <Input labelStyle={{color:'#0073D8',fontWeight:'normal'}}
+                                label="Password"
+                                placeholder="Enter Password"
+                                rightIcon= {
+                                    <Icon iconStyle={{}}
+                                        name='lock-outline'
+                                        color='#0073D8'
+                                        size={22}
+                                        onPress={this.seePassword} />
+                                        }
+                                onChangeText={(password)=>this.setState({password:password})}
+                                secureTextEntry={seePassword}
+                                // errorMessage="Invalid Email or Password"
+                        />
+                    </BoxLogin>
+                </KeyboardAvoidingView>
                 <View style={{marginTop:20,justifyContent:'space-between',flex:1}}>
                 {loading ? <ActivityIndicator style={{flex:1,alignSelf:'center',justifyContent:'flex-start'}} size="large"/> :
                     <Button style={{width:width-100}} title="Sign In" onPress={this.signIn}> </Button> }
@@ -100,7 +114,7 @@ const styles=StyleSheet.create({
     background: {
         flex:1,
         alignItems:'center',
-        justifyContent:'center'
+        // justifyContent:'center'
     },
     logo: {
           height:180,

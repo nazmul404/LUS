@@ -29,7 +29,7 @@ export default class DetailsScreen extends Component {
 
                 <FlatList 
                     data={item.image}
-                    keyExtractor = {(item) => item.id}
+                    keyExtractor = {(item) => item}
                     renderItem={({item}) =>
                         <Image style={{height:250,borderRadius:6,marginHorizontal:16,marginVertical:8}}
                             resizeMode="cover"
@@ -38,8 +38,9 @@ export default class DetailsScreen extends Component {
                     }
                     ListFooterComponent={ 
                         <View style={{paddingBottom:150,marginHorizontal:16}}>
-                            <Text style={{fontSize:28,fontWeight:'bold',paddingBottom:16}}>{item.title}</Text>
-                            <Text style={{fontSize:16}}>{item.description}</Text>
+                            <Text style={{fontSize:28,fontWeight:'bold',paddingBottom:8}}>{item.title}</Text>
+                            <View style={{borderBottomWidth:1,borderBottomColor:"#3e2723"}}></View>
+                            <Text style={{fontSize:16,paddingTop:8}}>{item.description}</Text>
                         </View>
                     }
                 />
